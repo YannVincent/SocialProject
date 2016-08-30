@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:padding="10dip"
+              android:orientation="vertical" >
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
+        >
+        <EditText
+            android:id="@+id/poduser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_top_bg"
+            android:layout_marginTop="-2dp"
+            android:padding="10dp"
+            android:hint="NOM D'UTILISATEUR"
+            android:textColorHint="#bbbbbb"
+            android:textColor="#141823"
+            android:drawableLeft="@drawable/user"/>
+        <EditText
+            android:id="@+id/podpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_bottom_bg"
+            android:layout_marginTop="-2dp"
+            android:padding="10dp"
+            android:hint="MOT DE PASSE"
+            android:textColorHint="#bbbbbb"
+            android:textColor="#141823"
+            android:inputType="textPassword"
+            android:drawableLeft="@drawable/password"/>
+        <LinearLayout android:id="@+id/podSelectedLay"
+                      android:layout_width="fill_parent"
+                      android:gravity="center"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal">
+        <TextView
+            android:id="@+id/podselected"
+            android:paddingLeft="25dp"
+            android:layout_width="fill_parent"
+            android:layout_height="30dip"
+            android:layout_gravity="center_vertical"
+            android:text="SELECTIONNEZ VOTRE POD -> "
+            android:textColor="#bbbbbb"
+            android:textSize="16sp"
+            android:layout_weight="0.25"
+            android:textStyle="bold"
+            android:paddingTop="5sp"/>
+
+        <Button android:id="@+id/podBtnSelect"
+                android:text="POD ?"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="4dp"
+                android:layout_toRightOf="@id/podselected"
+                style="@style/DefaultButtonText"
+                android:background="@drawable/button_default_bg"
+            />
+            </LinearLayout>
+
+        <Button android:id="@+id/podConfigOK"
+                android:text="Connexion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="4dp"
+                style="@style/DefaultButtonText"
+                android:background="@drawable/button_default_bg"
+            />
+
+        <TextView android:id="@+id/link_to_register"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="40dip"
+                  android:layout_marginBottom="40dip"
+                  android:text="Vous n'êtes pas sur diaspora ? Inscrivez-vous sur un POD depuis votre navigateur !"
+                  android:gravity="center"
+                  android:textSize="12dip"
+                  android:textColor="#0b84aa"/>
+    </LinearLayout>
+
+
+</LinearLayout>

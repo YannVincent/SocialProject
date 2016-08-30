@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<configuration>
+    <property name="LOG_DIR" value="/sdcard/Android/data/fr.scaron.diaspdroid/logs" />
+
+  <appender name="DiaspDroid" class="ch.qos.logback.core.FileAppender">
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>DEBUG</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>ACCEPT</onMismatch>
+    </filter>
+
+	  <file>${LOG_DIR}/mainapplication.log</file>
+      <includeCallerData>true</includeCallerData>
+
+    <encoder>
+		<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{20} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="org.springframework.web" level="DEBUG" additivity="false">
+      <appender-ref ref="DiaspDroid" />
+  </logger>
+
+  <!-- Write DEBUG messages from class B to its own log -->
+  <logger name="fr.android.scaron.diaspdroid" level="DEBUG" additivity="false">
+    <appender-ref ref="DiaspDroid" />
+  </logger>
+
+    <logger name="com.google.gson" level="TRACE" additivity="true">
+        <appender-ref ref="DiaspDroid" />
+    </logger>
+
+  <!-- Write DEBUG (and higher-level) messages to logcat -->
+  <root level="DEBUG">
+    <appender-ref ref="DiaspDroid" />
+  </root>
+</configuration>
